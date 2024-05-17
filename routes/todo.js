@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const {create,getAllTask, deleteTask} = require('../controllers/todo')
+const {create,all, remove, patch} = require('../controllers/todo')
 
-router.get('/', getAllTask);
+router.get('/', all);
 router.post('/create', create);
-router.delete('/:id', deleteTask);
+router.patch('/:id', patch);
+router.delete('/:id', remove);
 
 //export this index to use in our index.js
 module.exports = router;
